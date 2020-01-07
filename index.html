@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Unix File Permission Generator</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+    <main>
+        <div id="app">
+            <section class="app-content">
+
+                <p>Enter file mode</p>
+                <label class="mode user">
+                    <span class="mode-label-text">User</span>
+                    <input v-model="perms.user" type="number" min="0" max="7" />
+                </label>
+                <label class="mode group">
+                    <span class="mode-label-text">Group</span>
+                    <input v-model="perms.group" type="number" min="0" max="7" />
+                </label>
+                <label class="mode other">
+                    <span class="mode-label-text">Other</span>
+                    <input v-model="perms.other" type="number" min="0" max="7" />
+                </label>
+                <p>&nbsp;</p>
+                <input v-on:keyup="update_from_text" v-model="permissionText" maxlength="9" class="perm-input" />
+
+    <p>Change file permission with</p>
+    <p>$ <code>chmod {{ perms.user}}{{perms.group}}{{perms.other}} my-file</code></p>
+<pre><code>
+# example
+$ chmod 0{{ perms.user}}{{perms.group}}{{perms.other}} my-file
+$ ls -l my-file
+{{ permissionText }} 1 user group  220 Jul 19 13:37 my-file
+</code></pre>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p><small>Created by <a href="https://kevingimbel.de" title="Visit the personal website of Kevin Gimbel, creator of this tool">Kevin Gimbel</a>. Source available on <a href="https://github.com/kevingimbel/unix-permission-generator" title="View source code on GitHub.com">GitHub</a></small></p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+    <script src="/assets/index.js"></script>
+</body>
+</html>

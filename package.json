@@ -1,0 +1,27 @@
+{
+  "name": "file-permission-generator",
+  "version": "1.0.0",
+  "description": "Web based file permission generator",
+  "main": "src/js/index.js",
+  "scripts": {
+    "build": "gulp",
+    "dev": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevingimbel/file-permission-generator.git"
+  },
+  "author": "Kevin Gimbel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kevingimbel/file-permission-generator/issues"
+  },
+  "homepage": "https://github.com/kevingimbel/file-permission-generator#readme",
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-uglify-es": "^2.0.0"
+  }
+}
