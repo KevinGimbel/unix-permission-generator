@@ -12,7 +12,7 @@
         <div id="app">
             <section class="app-content">
 
-                <p>Enter file mode</p>
+                <p>Enter file mode | <a v-bind:href="permalink">Permalink for current permission</a></p>
                 <label class="mode user">
                     <span class="mode-label-text">User</span>
                     <input v-model="perms.user" type="number" min="0" max="7" />

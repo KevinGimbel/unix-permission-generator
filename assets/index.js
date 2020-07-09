@@ -20,6 +20,9 @@ var app = new Vue({
     },
     permissionText: function () {
       return `${int_to_unix_perm(this.perms.user)}${int_to_unix_perm(this.perms.group)}${int_to_unix_perm(this.perms.other)}`;
+    },
+    permalink: function () {
+      return `/?u=${this.perms.user}&g=${this.perms.group}&o=${this.perms.other}`;
     }
   },
   methods: {
@@ -35,6 +38,39 @@ var app = new Vue({
 
       return this;
     }
+  },
+  created: function () {
+    console.log("CREATED!");
+
+    if (window.location.search != "") {
+      let parts = window.location.search.replace("?", "").split("&");
+
+      for (let p in parts) {
+        console.log(parts[p]);
+        let current = parts[p];
+        let type = current.split("=")[0];
+        let value = current.split("=")[1];
+
+        switch (type) {
+          case "u":
+            this.perms.user = value;
+            break;
+
+          case "g":
+            this.perms.group = value;
+            break;
+
+          case "o":
+            this.perms.other = value;
+            break;
+
+          default:
+            console.log("Unsupported type: ", type);
+        }
+      }
+    }
+
+    console.log(window.location.search);
   }
 });
 
