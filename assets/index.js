@@ -22,7 +22,7 @@ var app = new Vue({
       return `${int_to_unix_perm(this.perms.user)}${int_to_unix_perm(this.perms.group)}${int_to_unix_perm(this.perms.other)}`;
     },
     permalink: function () {
-      return `/?u=${this.perms.user}&g=${this.perms.group}&o=${this.perms.other}`;
+      return `?u=${this.perms.user}&g=${this.perms.group}&o=${this.perms.other}`;
     }
   },
   methods: {
