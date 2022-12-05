@@ -1,6 +1,5 @@
 const { parallel, src, dest, watch } = require('gulp');
 const babel = require('gulp-babel');
-const uglify = require('gulp-uglify-es').default;
 const cleanCSS = require('gulp-clean-css');
 
 function javascript() {

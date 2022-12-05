@@ -1,6 +1,6 @@
 {
   "name": "file-permission-generator",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Web based file permission generator",
   "main": "src/js/index.js",
   "scripts": {
@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/kevingimbel/file-permission-generator#readme",
   "devDependencies": {
-    "@babel/core": "^7.7.7",
+    "@babel/core": "^7.20.5",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.2.0",
